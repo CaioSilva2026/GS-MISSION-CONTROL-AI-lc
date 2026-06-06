@@ -32,7 +32,6 @@ O projeto tem como objetivo:
 - Utilizar IA para explicar impactos técnicos e econômicos.
 - Demonstrar aplicações de sensoriamento remoto no agronegócio.
 
----
 
 # Missão Simulada
 
@@ -74,8 +73,6 @@ As imagens produzidas permitem avaliar:
 - Produtividade agrícola
 - Evolução das lavouras
 
----
-
 # Parâmetros Monitorados
 
 O sistema monitora cinco parâmetros principais.
@@ -88,8 +85,177 @@ O sistema monitora cinco parâmetros principais.
 | Janela de Downlink | min | Tempo de entrega dos dados |
 | Estabilidade de Atitude | arcseg | Nitidez das imagens |
 
----
 
 # Sistema de Alertas
 
 O sistema utiliza regras implementadas em Python para classificar o estado da missão.
+
+## NORMAL
+
+Todos os sistemas operando dentro dos limites esperados.
+
+## ATENÇÃO
+
+Indícios iniciais de degradação operacional.
+
+Exemplos:
+
+- Temperatura acima da faixa ideal
+- Instabilidade de atitude moderada
+- Armazenamento próximo do limite
+
+## CRÍTICO
+
+Anomalia significativa com risco operacional.
+
+Exemplos:
+
+- Armazenamento acima de 85%
+- Downlink iminente
+- Sensor degradado
+
+##  EMERGÊNCIA
+
+Risco imediato para a missão.
+
+Exemplos:
+
+- Falha crítica do sensor NDVI
+- Sobreaquecimento do payload
+- Perda de controle de atitude
+- Múltiplas falhas simultâneas
+
+
+#  Inteligência Artificial
+
+A IA não toma decisões operacionais.
+
+Todas as decisões são realizadas pela lógica implementada em Python.
+
+A Inteligência Artificial é responsável por:
+
+- Interpretar a telemetria
+- Explicar os impactos das falhas
+- Adaptar a linguagem ao perfil do usuário
+- Gerar relatórios contextualizados
+
+
+#  Personas Atendidas
+
+## Engenheiro de Operações
+
+Recebe informações técnicas sobre:
+
+- Telemetria
+- Saúde dos sistemas
+- Procedimentos de mitigação
+- Operação orbital
+
+## Produtor Rural
+
+Recebe informações sobre:
+
+- Disponibilidade dos dados NDVI
+- Impactos para a lavoura
+- Tempo de entrega das imagens
+
+## Analista de Seguro Agrícola
+
+Recebe informações sobre:
+
+- Validade dos dados
+- Confiabilidade dos índices
+- Utilização em processos de sinistro
+
+
+# Arquitetura do Sistema
+
+```text
+mission-control-ai/
+│
+├── main.py
+├── banner_ascii.py
+├── requirements.txt
+├── .env.example
+│
+├── src/
+│   ├── engine.py
+│   ├── telemetria.py
+│   ├── alertas.py
+│   └── ui.py
+│
+├── prompts/
+│   └── system_prompt.md
+│
+├── data/
+│
+└── README.md
+```
+
+
+# Componentes Principais
+
+## telemetria.py
+
+Responsável por:
+
+- Simular sensores
+- Gerar dados orbitais
+- Criar cenários de operação
+- Inserir anomalias para testes
+
+
+## alertas.py
+
+É responsável por:
+
+- Avaliar limites operacionais
+- Gerar alertas
+- Classificar severidade
+- Executar ações automatizadas
+
+
+## engine.py
+
+Responsável por:
+
+- Integrar IA e telemetria
+- Construir prompts
+- Gerenciar histórico da missão
+- Produzir respostas inteligentes
+
+
+## ui.py
+
+Responsável pela interface do usuário.
+
+Tecnologias utilizadas:
+
+- Rich
+- Prompt Toolkit
+- PyFiglet
+
+Funcionalidades:
+
+- Painéis coloridos
+- Histórico de comandos
+- Banner ASCII
+- Alertas visuais
+
+# Comandos Disponíveis
+
+| Comando | Função |
+|----------|---------|
+| /help | Exibe ajuda |
+| /status | Mostra telemetria atual |
+| /about | Informações do projeto |
+| /clear | Limpa o terminal |
+| /exit | Encerra o sistema |
+| /resetar | Reinicia a telemetria |
+| /anomalia ndvi | Falha do sensor NDVI |
+| /anomalia temp | Sobreaquecimento |
+| /anomalia storage | Armazenamento crítico |
+| /anomalia downlink | Downlink iminente |
+| /anomalia atitude | Instabilidade de atitude |
+| /anomalia todos | Emergência total |
+| /crise | Atalho para emergência total |
