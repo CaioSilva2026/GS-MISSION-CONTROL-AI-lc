@@ -285,3 +285,80 @@ Funcionalidades:
 - PyFiglet
 - Python Dotenv
 # Como Executar:
+
+## 1. Clonar o repositório
+
+```bash
+git clone link do repositório
+```
+
+## 2. Entrar no projeto
+
+```bash
+cd nome do aquivo
+```
+
+## 3. Criar ambiente virtual
+
+```bash
+python -m venv .venv
+```
+
+## 4. Ativar ambiente
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux/Mac
+
+```bash
+source .venv/bin/activate
+```
+
+## 5. Instalar dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+## 6. Configurar a API Key
+
+Criar o arquivo:
+
+```env
+.env
+```
+
+Adicionar:
+
+```env
+OLLAMA_API_KEY=sua_chave_aqui
+```
+
+## 7. Executar
+
+```bash
+python main.py
+```
+# Conceitos Aplicados
+
+- Inteligência Artificial Generativa
+- Engenharia de Prompt
+- Sensoriamento Remoto
+- Sistemas Embarcados
+- Monitoramento Espacial
+- Agricultura de Precisão
+- Análise de Risco
+- Desenvolvimento em Python
+
+# Conclusão:
+O desenvolvimento do Mission Control AI AgroSat permitiu aplicar conceitos de Inteligência Artificial Generativa, Engenharia de Prompt, programação em Python e monitoramento de sistemas espaciais em um contexto realista voltado ao agronegócio brasileiro.
+
+A solução demonstra como dados de telemetria de um satélite podem ser transformados em informações úteis para diferentes perfis de usuários, conectando eventos orbitais a impactos concretos para produtores rurais, engenheiros de operações e analistas de seguro agrícola.
+
+Além de simular a operação de uma missão espacial, o projeto evidencia o potencial da IA como ferramenta de apoio à tomada de decisão, tornando informações técnicas mais acessíveis e facilitando a interpretação de situações críticas em tempo real.
+
+Por meio da integração entre lógica de negócios, análise automatizada de alertas e modelos de linguagem, o AgroSat apresenta uma abordagem inovadora para o monitoramento de ativos espaciais e para o uso estratégico de dados no setor agrícola, reforçando a importância da tecnologia como instrumento para aumentar a eficiência, a sustentabilidade e a segurança das operações no campo.
