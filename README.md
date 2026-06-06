@@ -259,3 +259,29 @@ Funcionalidades:
 | /anomalia atitude | Instabilidade de atitude |
 | /anomalia todos | Emergência total |
 | /crise | Atalho para emergência total |
+
+# Cenários de Demonstração: O sistema possui cenários prontos para demonstração.
+
+### Operação Normal: Todos os sistemas funcionando corretamente.
+
+### Armazenamento Crítico: Buffer próximo do limite máximo.
+
+### Emergência Térmica: Payload acima de 65°C.
+
+### Falha do Sensor NDVI: Dados multiespectrais inválidos.
+
+### Instabilidade de Atitude: Imagens com perda de qualidade.
+
+### Emergência Total: Todos os sistemas em estado crítico simultaneamente.
+
+## Linguagem:
+
+- Python 3.10+
+
+## Bibliotecas:
+- Ollama
+- Rich
+- Prompt Toolkit
+- PyFiglet
+- Python Dotenv
+# Como Executar:
