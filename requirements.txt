@@ -1,0 +1,17 @@
+# Dependências do projeto Mission Control AI — AgroSat
+# Trilha 1: Sensoriamento Agrícola
+# Fixe as versões para reprodutibilidade
+
+# Core — IA e ambiente
+ollama==0.6.2
+python-dotenv==1.2.2
+
+# Interface CLI
+rich==15.0.0
+prompt-toolkit==3.0.52
+pyfiglet==1.0.4
+
+# Opcionais — descomente se quiser incrementar:
+# pandas==2.2.3          # Manipulação de séries temporais de telemetria
+# matplotlib==3.9.2      # Gráficos no terminal
+# textual==0.75.0        # TUI completa com layouts CSS-like

@@ -1,0 +1,122 @@
+{
+  "cenarios": [
+    {
+      "id": "normal_soja_mt",
+      "nome": "Operação Normal — Soja MT",
+      "descricao": "Todos os sistemas em verde. Passagem sobre a Chapada dos Parecis.",
+      "telemetria": {
+        "ndvi_sensor_saude": 96.2,
+        "temperatura_payload": 28.4,
+        "armazenamento": 42.0,
+        "janela_downlink": 38.0,
+        "estabilidade_atitude": 1.8,
+        "area_imageada": "Chapada dos Parecis (MT) — soja",
+        "cobertura_nuvens": 12.0
+      },
+      "status_esperado": "NORMAL",
+      "pergunta_demo": "Como está a missão agora?"
+    },
+    {
+      "id": "critico_armazenamento",
+      "nome": "Crítico — Armazenamento Quase Cheio",
+      "descricao": "Buffer de armazenamento em nível crítico. Downlink urgente necessário.",
+      "telemetria": {
+        "ndvi_sensor_saude": 91.0,
+        "temperatura_payload": 31.2,
+        "armazenamento": 88.4,
+        "janela_downlink": 22.0,
+        "estabilidade_atitude": 2.1,
+        "area_imageada": "Triangulo Mineiro (MG) — cafe e milho",
+        "cobertura_nuvens": 8.0
+      },
+      "status_esperado": "CRITICO",
+      "pergunta_demo": "Qual o risco para os produtores do Triângulo Mineiro agora?"
+    },
+    {
+      "id": "emergencia_termica",
+      "nome": "Emergência Térmica — Sobreaquecimento do Payload",
+      "descricao": "Temperatura do payload óptico acima de 65°C. Risco de dano permanente.",
+      "telemetria": {
+        "ndvi_sensor_saude": 78.3,
+        "temperatura_payload": 67.5,
+        "armazenamento": 55.0,
+        "janela_downlink": 45.0,
+        "estabilidade_atitude": 3.2,
+        "area_imageada": "Sul do Maranhao (MA) — soja (MATOPIBA)",
+        "cobertura_nuvens": 5.0
+      },
+      "status_esperado": "EMERGENCIA",
+      "pergunta_demo": "O que acontece com os dados NDVI do MATOPIBA nesta situação?"
+    },
+    {
+      "id": "emergencia_ndvi",
+      "nome": "Emergência NDVI — Falha Crítica do Sensor",
+      "descricao": "Sensor NDVI com menos de 25% de integridade. Imageamento multiespectral inválido.",
+      "telemetria": {
+        "ndvi_sensor_saude": 18.0,
+        "temperatura_payload": 33.0,
+        "armazenamento": 60.0,
+        "janela_downlink": 55.0,
+        "estabilidade_atitude": 2.5,
+        "area_imageada": "Sudoeste do Parana (PR) — trigo e soja",
+        "cobertura_nuvens": 20.0
+      },
+      "status_esperado": "EMERGENCIA",
+      "pergunta_demo": "As seguradoras ainda podem usar os dados desta passagem para calcular sinistros?"
+    },
+    {
+      "id": "atencao_atitude",
+      "nome": "Atenção — Instabilidade de Atitude",
+      "descricao": "Erro de apontamento próximo do limite. Qualidade de imagem reduzida.",
+      "telemetria": {
+        "ndvi_sensor_saude": 88.5,
+        "temperatura_payload": 30.0,
+        "armazenamento": 50.0,
+        "janela_downlink": 60.0,
+        "estabilidade_atitude": 7.2,
+        "area_imageada": "Vale do Sao Francisco (PE/BA) — fruticultura irrigada",
+        "cobertura_nuvens": 3.0
+      },
+      "status_esperado": "ATENCAO",
+      "pergunta_demo": "As imagens desta passagem sobre o Vale do São Francisco têm qualidade suficiente para seguro?"
+    },
+    {
+      "id": "critico_downlink",
+      "nome": "Crítico — Downlink Iminente",
+      "descricao": "Janela de downlink em menos de 5 minutos. Fila de transmissão precisa ser priorizada.",
+      "telemetria": {
+        "ndvi_sensor_saude": 93.0,
+        "temperatura_payload": 27.0,
+        "armazenamento": 72.0,
+        "janela_downlink": 3.5,
+        "estabilidade_atitude": 1.5,
+        "area_imageada": "Oeste da Bahia (BA) — soja e algodao",
+        "cobertura_nuvens": 15.0
+      },
+      "status_esperado": "CRITICO",
+      "pergunta_demo": "Quais imagens priorizar no downlink agora?"
+    },
+    {
+      "id": "emergencia_total",
+      "nome": "Emergência Total — Falha Múltipla",
+      "descricao": "Todos os sistemas em estado crítico/emergência simultaneamente.",
+      "telemetria": {
+        "ndvi_sensor_saude": 15.0,
+        "temperatura_payload": 70.0,
+        "armazenamento": 97.0,
+        "janela_downlink": 1.2,
+        "estabilidade_atitude": 16.0,
+        "area_imageada": "Cerrado Goiano (GO) — cana e soja",
+        "cobertura_nuvens": 10.0
+      },
+      "status_esperado": "EMERGENCIA",
+      "pergunta_demo": "Qual é o protocolo de emergência para esta situação?"
+    }
+  ],
+  "metadata": {
+    "trilha": "AgroSat — Trilha 1",
+    "satelite": "AgroSat-1 (CBERS-4A sim.)",
+    "versao": "2026.1",
+    "descricao": "Cenarios pre-definidos para teste e demonstracao do sistema Mission Control AI"
+  }
+}
