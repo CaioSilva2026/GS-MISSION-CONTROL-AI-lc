@@ -335,7 +335,7 @@ Criar o arquivo:
 Adicionar:
 
 ```env
-OLLAMA_API_KEY=sua_chave_aqui
+OLLAMA_API_KEY=sua_chave
 ```
 
 ## 7. Executar
