@@ -1,0 +1,30 @@
+# Credenciais — NUNCA versionar
+.env
+.example
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Outputs gerados em runtime
+data/historico_*.json
+data/log_*.json
+*.log
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
