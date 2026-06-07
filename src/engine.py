@@ -1,17 +1,3 @@
-"""
-src/engine.py — Motor de análise da Mission Control AI — AgroSat (Trilha 1).
-
-Este arquivo combina:
-  - A função llm(): ponto único de contato com o modelo via Ollama Cloud
-  - A classe MissionEngine: orquestra telemetria + alertas + IA + memória de contexto
-
-Fluxo do método analyze():
-  1. Coleta dados via src.telemetria.coletar()
-  2. Avalia alertas via src.alertas.avaliar(dados)
-  3. Monta prompt dinâmico com dados + alertas + histórico + pergunta
-  4. Chama llm(prompt, system=system_prompt)
-  5. Armazena no histórico e retorna resposta
-"""
 
 import os
 from pathlib import Path
@@ -47,7 +33,7 @@ client = Client(
 # ──────────────────────────────────────────────────────────────────────────────
 def llm(prompt: str, system: str | None = None,
         max_tokens: int = 900, temperature: float = 0.3) -> str:
-    """Envia prompt ao gpt-oss:120b via Ollama Cloud e retorna o texto da resposta."""
+
     messages = []
     if system:
         messages.append({"role": "system", "content": system})

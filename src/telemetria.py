@@ -1,22 +1,3 @@
-"""
-src/telemetria.py — Geração de dados simulados de telemetria para AgroSat.
-
-Trilha 1 — Sensoriamento Agrícola
-Satélite simulado: satélite de sensoriamento multiespectral em órbita baixa (LEO),
-similar ao CBERS-4A ou Planet Labs.
-
-Parâmetros monitorados:
-  - ndvi_sensor_saude   : saúde do sensor NDVI multiespectral (0-100 %)
-  - temperatura_payload : temperatura do payload óptico (°C)
-  - armazenamento       : capacidade de armazenamento utilizada (%)
-  - janela_downlink     : tempo restante até próxima janela de downlink (min)
-  - estabilidade_atitude: erro de apontamento do satélite (arcseg)
-
-Personas atendidas:
-  - Engenheiro de operações do satélite
-  - Produtor rural consumidor do dado NDVI
-  - Analista de seguro agrícola baseado em índice
-"""
 
 import random
 from datetime import datetime
@@ -53,13 +34,7 @@ def _drift(valor: float, amplitude: float, minimo: float, maximo: float) -> floa
 
 
 def coletar(forcar_anomalia: str | None = None) -> dict[str, Any]:
-    """
-    Coleta (simula) a leitura atual dos sensores do AgroSat.
 
-    forcar_anomalia: 'ndvi_sensor_saude' | 'temperatura_payload' |
-                     'armazenamento' | 'janela_downlink' |
-                     'estabilidade_atitude' | 'todos'
-    """
     global _estado, _ciclo
 
     if not _estado:

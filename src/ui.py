@@ -1,22 +1,3 @@
-"""
-src/ui.py — Interface CLI estilo Claude Code para o Mission Control AI — AgroSat.
-
-Usa Rich (painéis, cores, tabelas) + prompt-toolkit (input editável com histórico).
-Comandos suportados:
-  /help            → tabela de comandos
-  /status          → snapshot da telemetria atual
-  /about           → informações do projeto
-  /clear           → limpa a tela e exibe o banner
-  /exit            → encerra o sistema
-  /anomalia ndvi   → força anomalia no sensor NDVI (para demonstração)
-  /anomalia temp   → força anomalia na temperatura do payload
-  /anomalia storage→ força anomalia no armazenamento
-  /anomalia downlink → força anomalia na janela de downlink
-  /anomalia atitude → força anomalia na estabilidade de atitude
-  /anomalia todos  → força emergência em todos os parâmetros
-  /crise           → atalho para /anomalia todos
-  /resetar         → reinicia a telemetria para valores normais
-"""
 
 import pyfiglet
 from datetime import datetime
