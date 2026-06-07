@@ -85,16 +85,6 @@ def load_system_prompt() -> str:
 # MissionEngine — motor central
 # ──────────────────────────────────────────────────────────────────────────────
 class MissionEngine:
-    """
-    Motor de análise do Mission Control AI — AgroSat.
-
-    Responsabilidades:
-      - Coletar telemetria simulada
-      - Avaliar alertas com lógica Python
-      - Construir prompt contextualizado com dados + histórico
-      - Chamar a IA via llm()
-      - Manter memória dos últimos ciclos
-    """
 
     # Quantos ciclos anteriores de telemetria manter na memória
     HISTORICO_MAX = 5
@@ -111,11 +101,11 @@ class MissionEngine:
     # ── Métodos públicos ──────────────────────────────────────────────────────
 
     def is_ready(self) -> bool:
-        """Retorna True quando a engine está pronta para receber perguntas."""
+
         return self._pronto
 
     def status_snapshot(self) -> str:
-        """Retorna texto legível com o estado atual da telemetria + alertas."""
+
         dados     = telemetria.coletar()
         resultado = alertas.avaliar(dados)
         self._atualizar_estado(dados, resultado)
@@ -125,17 +115,7 @@ class MissionEngine:
         return f"{painel}\n\n{alertas_}"
 
     def analyze(self, pergunta_usuario: str) -> str:
-        """
-        Ponto principal de interação.
 
-        1. Coleta telemetria fresca
-        2. Avalia alertas (lógica Python)
-        3. Verifica se é comando especial (/forcar_anomalia)
-        4. Monta prompt com contexto completo
-        5. Chama IA
-        6. Armazena no histórico de chat
-        7. Retorna resposta
-        """
         if not self._pronto:
             return self._msg_sem_chave()
 
@@ -161,7 +141,7 @@ class MissionEngine:
         return resposta
 
     def forcar_cenario(self, tipo_anomalia: str) -> str:
-        """Força um cenário de anomalia e retorna análise completa."""
+
         if not self._pronto:
             return self._msg_sem_chave()
         dados     = telemetria.coletar(forcar_anomalia=tipo_anomalia)
@@ -195,13 +175,7 @@ class MissionEngine:
 
     def _montar_prompt(self, pergunta: str, dados: dict,
                        resultado: alertas.ResultadoAvaliacao) -> str:
-        """
-        Constrói o prompt do usuário com:
-          - Resumo da telemetria atual + alertas (gerado pelo src/alertas.py)
-          - Histórico dos últimos ciclos (memória de contexto)
-          - Histórico recente do chat
-          - A pergunta do usuário
-        """
+
         secoes = [resultado.resumo]
 
         # Memória: histórico de telemetria dos últimos ciclos
@@ -230,7 +204,7 @@ class MissionEngine:
 
     @staticmethod
     def _extrair_comando_anomalia(texto: str) -> str | None:
-        """Detecta se o usuário digitou um comando de simulação de anomalia."""
+
         texto_lower = texto.lower()
         mapa = {
             "/anomalia ndvi":     "ndvi_sensor_saude",

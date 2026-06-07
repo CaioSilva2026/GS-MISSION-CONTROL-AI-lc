@@ -1,11 +1,3 @@
-"""
-src/alertas.py — Thresholds e lógica de decisão do AgroSat (Trilha 1).
-
-IMPORTANTE: A decisão de alertar é feita em Python — não na IA.
-A IA interpreta e contextualiza; o if/else decide.
-
-Níveis: NORMAL | ATENCAO | CRITICO | EMERGENCIA
-"""
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -154,7 +146,7 @@ def _msg(param, valor, sev):
 
 
 def avaliar(dados: dict) -> ResultadoAvaliacao:
-    """Avalia telemetria completa e retorna status, alertas e resumo."""
+
     params = [
         "ndvi_sensor_saude",
         "temperatura_payload",

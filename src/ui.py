@@ -51,7 +51,7 @@ _session = PromptSession(
 # ──────────────────────────────────────────────────────────────────────────────
 
 def show_banner() -> None:
-    """Exibe o banner ASCII + card de boas-vindas."""
+
     try:
         linha1 = pyfiglet.figlet_format("Global Solution", font="ansi_shadow")
         linha2 = pyfiglet.figlet_format("Mission Control", font="ansi_shadow")
@@ -72,10 +72,10 @@ def show_banner() -> None:
 
     card = Table.grid(padding=(0, 1))
     card.add_column(style="#8484A0")
-    card.add_row("🌾  Trilha    :", "[bold #06B6D4]AgroSat — Sensoriamento Agrícola[/bold #06B6D4]")
-    card.add_row("🛰  Satélite  :", "AgroSat-1 (CBERS-4A sim.) — LEO 614 km")
-    card.add_row("🤖  Modelo    :", "gpt-oss:120b via Ollama Cloud")
-    card.add_row("💬  Ajuda     :", "digite /help para ver todos os comandos")
+    card.add_row("  Trilha    :", "[bold #06B6D4]AgroSat — Sensoriamento Agrícola[/bold #06B6D4]")
+    card.add_row("  Satélite  :", "AgroSat-1 (CBERS-4A sim.) — LEO 614 km")
+    card.add_row("  Modelo    :", "gpt-oss:120b via Ollama Cloud")
+    card.add_row("  Ajuda     :", "digite /help para ver todos os comandos")
 
     console.print(
         Panel(card, title="◆ MISSION CONTROL AI", border_style="#06B6D4",
@@ -89,7 +89,6 @@ def show_banner() -> None:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def show_response(text: str, titulo: str = "◆ Mission Control AI") -> None:
-    """Renderiza a resposta da IA em painel com timestamp."""
     agora = datetime.now().strftime("%H:%M:%S")
     console.print(
         Panel(
@@ -103,7 +102,6 @@ def show_response(text: str, titulo: str = "◆ Mission Control AI") -> None:
 
 
 def show_telemetria(texto: str) -> None:
-    """Exibe painel de telemetria com borda verde."""
     console.print(
         Panel(
             texto,
@@ -115,7 +113,6 @@ def show_telemetria(texto: str) -> None:
 
 
 def show_thinking() -> "Live":
-    """Retorna um contexto Live com spinner para usar enquanto a IA processa."""
     spinner = Spinner("dots", text=Text(" Consultando IA...", style="#8484A0"))
     return Live(spinner, console=console, refresh_per_second=12)
 
@@ -172,13 +169,13 @@ def show_about() -> None:
         "Simula a operação de um satélite de sensoriamento multiespectral (CBERS-4A / Planet Labs)\n"
         "monitorando lavouras brasileiras em tempo real via IA generativa.\n\n"
         "[bold #06B6D4]Parâmetros monitorados:[/bold #06B6D4]\n"
-        "  🌿 Saúde do sensor NDVI      • 🌡 Temperatura do payload óptico\n"
-        "  💾 Capacidade de armazenamento • 📡 Janela de downlink\n"
-        "  🎯 Estabilidade de atitude\n\n"
+        "   Saúde do sensor NDVI      • 🌡 Temperatura do payload óptico\n"
+        "   Capacidade de armazenamento •  Janela de downlink\n"
+        "   Estabilidade de atitude\n\n"
         "[bold #06B6D4]Personas atendidas:[/bold #06B6D4]\n"
-        "  👷 Engenheiro de operações do satélite\n"
-        "  🌾 Produtor rural consumidor do dado NDVI\n"
-        "  📋 Analista de seguro agrícola baseado em índice\n\n"
+        "   Engenheiro de operações do satélite\n"
+        "   Produtor rural consumidor do dado NDVI\n"
+        "   Analista de seguro agrícola baseado em índice\n\n"
         "[bold #06B6D4]Stack:[/bold #06B6D4] Python 3.10+ · Ollama Cloud (gpt-oss:120b) · "
         "Rich · prompt-toolkit · pyfiglet\n\n"
         "[#8484A0]FIAP · Ciência da Computação · Global Solution 2026.1[/#8484A0]"
@@ -191,7 +188,7 @@ def show_about() -> None:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def run_cli(engine) -> None:
-    """Loop principal da CLI. Recebe o MissionEngine e gerencia toda a interação."""
+
     show_banner()
 
     # Aviso se a engine não está pronta (sem chave)
