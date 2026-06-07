@@ -1,4 +1,5 @@
 # GS-MISSION-CONTROL-AI-lc-AgroSat
+# INTRODUCAO
 
 Tecnologia espacial conectada a problemas reais da sociedade agronegócio, sustentabilidade,
 comunicação e mobilidade impulsionados por dados orbitais e IA generativa.
