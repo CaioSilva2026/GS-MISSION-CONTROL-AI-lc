@@ -302,7 +302,7 @@ cd nome do aquivo
 ## 3. Criar ambiente virtual
 
 ```bash
-python -m venv .venv
+python -m venv .venv ou py -m venv .venv
 ```
 
 ## 4. Ativar ambiente
@@ -342,7 +342,7 @@ OLLAMA_API_KEY=sua_chave
 ## 7. Executar
 
 ```bash
-python main.py
+python main.py ou py main.py
 ```
 # Conceitos Aplicados
 
