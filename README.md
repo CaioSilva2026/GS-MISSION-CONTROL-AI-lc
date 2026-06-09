@@ -344,6 +344,24 @@ OLLAMA_API_KEY=sua_chave
 ```bash
 python main.py ou py main.py
 ```
+# Proposta de valor / modelo de negócio
+
+Qual o problema real terrestre que esta missão resolve?
+
+O Brasil perde em média 10 mil km² de floresta por ano, e a janela de resposta rápida a incêndios é de poucas horas. Quando o satélite de monitoramento falha ou opera com sensor degradado, órgãos como INPE e IBAMA ficam cegos para eventos que acontecem em tempo real. Cada hora de sensor térmico offline é uma janela onde focos ativos podem se transformar em incêndios de grande escala sem que nenhuma brigada seja acionada. O EnviroSat resolve isso garantindo continuidade operacional e comunicando proativamente qualquer degradação de capacidade — antes que ela vire problema irrecuperável.
+
+Quem paga pela solução?
+
+Modelo híbrido: o setor público (AEB, INPE, MMA, estados com programas de prevenção a incêndios) paga pela infraestrutura de monitoramento contínuo como serviço de utilidade pública. O setor privado (seguradoras agrícolas, empresas de carbono, grandes produtores com passivo ambiental) paga por acesso aos dados processados e aos relatórios de compliance gerados pela IA — especialmente o rastreio de áreas de preservação permanente.
+
+Métrica de impacto
+
+Se o EnviroSat operar com 100% de saúde por 1 ano: aproximadamente 800 mil km² de território nacional monitorados continuamente, detecção de até 12 mil focos ativos com latência inferior a 6 horas, redução estimada de 15–20% no tempo médio de mobilização de brigadas estaduais em áreas cobertas, e suporte a verificação de aproximadamente 2 mil laudos de compliance ambiental por ano para o mercado de crédito de carbono.
+
+Modelo de negócio
+
+Dado-como-serviço (DaaS) + SaaS de análise: o INPE/AEB financia a operação do satélite via concessão pública. O sistema de IA roda como plataforma SaaS acessível por API, com cobrança por volume de análises para clientes privados (seguradoras, empresas de carbono, cooperativas rurais). O modelo de alertas em tempo real para brigadas opera como serviço público gratuito integrado ao DETER.
+
 # Conceitos Aplicados
 
 - Inteligência Artificial Generativa
